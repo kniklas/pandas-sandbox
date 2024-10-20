@@ -1,11 +1,14 @@
 "My docstring"
 
+import warnings
+
 import pandas as pd
 
 FILE_NAME = 'new_words.xlsx'
 FILE_PATH = '~/Desktop/English/'
 LAST_ROWS = 4
 
+warnings.filterwarnings('ignore', category=UserWarning, module='openpyxl')
 df = pd.read_excel(FILE_PATH+FILE_NAME)
 start_row = df.shape[0] - LAST_ROWS
 end_row = df.shape[0]
