@@ -20,7 +20,7 @@ for i in range(start_row, end_row):
           df['type'].iloc[i]+',', end='')
     # handle simpler display if only one explanation
     if df['def no'].iloc[i] == 1:
-        print(f"{df[meanings[0]].iloc[i]}", end=' ')
+        print(f"{df[meanings[0]].iloc[i]}", end='')
     # handle more complex display for multiple meanings
     else:
         for j in range(df['def no'].iloc[i]):
