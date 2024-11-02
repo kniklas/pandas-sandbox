@@ -12,9 +12,10 @@ args = parser.parse_args()
 
 LAST_ROWS = args.n
 FILE_NAME = args.file
+SHEET_NAME = 'words list'
 
 warnings.filterwarnings('ignore', category=UserWarning, module='openpyxl')
-df = pd.read_excel(FILE_NAME)
+df = pd.read_excel(FILE_NAME, sheet_name=SHEET_NAME)
 start_row = df.shape[0] - LAST_ROWS
 end_row = df.shape[0]
 meanings = ('meaning 1', 'meaning 2', 'meaning 3', 'meaning 4', 'meaning 5')
